@@ -27,7 +27,7 @@ export default function VendorsPage() {
   const paginatedVendors = filteredVendors.slice((page - 1) * perPage, page * perPage);
 
   useEffect(() => {
-    setPage(1); // Reset to first page when search query changes
+    setPage(1); 
   }, [searchQuery]);
 
   return (

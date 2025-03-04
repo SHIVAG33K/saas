@@ -7,7 +7,7 @@ export default function Dash() {
             <h2 className="text-xl font-semibold">Welcome To</h2>
             <h1 className="text-2xl font-bold">Your Task Management Area</h1>
             <p className="text-gray-500 text-sm">You don’t have any projects yet! You can create the companies now!</p>
-            <button className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-md">Create Companies</button>
+            <button className="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-md">Create Companies</button>
           </div>
           <div className="w-32 h-32 bg-gray-200 rounded-lg"></div>
         </div>
@@ -20,10 +20,10 @@ export default function Dash() {
             { count: 9, label: "Employees" },
           ].map((item, index) => (
             <div key={index} className="bg-white p-4 rounded-lg shadow-sm flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-200 flex items-center justify-center rounded-full">
-                <span className="text-green-700 font-bold">{item.count}</span>
+              <div className="w-8 h-8 bg-indigo-200 flex items-center justify-center rounded-full">
+                <span className="text-white-700 font-bold">{item.count}</span>
               </div>
-              <span className="text-gray-600 font-medium">{item.label}</span>
+              <span className="text-white-600 font-medium">{item.label}</span>
             </div>
           ))}
         </div>
