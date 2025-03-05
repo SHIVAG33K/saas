@@ -82,7 +82,7 @@ export default function AddTeamModal({
             </button>
             <button
               type="submit"
-              className="px-16 py-2 bg-purple-600 text-white rounded-lg"
+              className="px-16 py-2 bg-indigo-500 text-white rounded-lg"
               onClick={onConfirm}
             >
               Confirm

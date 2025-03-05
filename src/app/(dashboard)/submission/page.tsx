@@ -92,7 +92,7 @@ export default function SubmissionsPage() {
             title="Submissions"
             company="Infotech"
             actionButton={
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md"
+              <button className="bg-indigo-500 text-white px-4 py-2 rounded-md"
               onClick={() => setShowAddSubmission(true)}>
                 New Submission
               </button>

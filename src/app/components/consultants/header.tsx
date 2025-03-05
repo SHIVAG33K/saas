@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ search, setSearch }) => (
       <button className="flex items-center px-4 py-2 border rounded-md text-gray-500">
         <Calendar size={18} className="mr-2" /> 29 July 2023
       </button>
-      <button className="px-4 py-2 bg-blue-500 text-white rounded-md flex items-center">
+      <button className="px-4 py-2 bg-indigo-500 text-white rounded-md flex items-center">
         <Filter size={18} className="mr-2" /> Filter
       </button>
     </div>

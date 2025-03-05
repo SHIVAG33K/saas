@@ -57,8 +57,8 @@ const ConsultantsTable: React.FC<ConsultantsTableProps> = ({ consultants, page, 
                 <td className="px-4 py-3 text-center text-gray-600">{c.interviews}</td>
                 <td className="px-4 py-3 flex space-x-2">
                   <button className="p-2 bg-gray-200 rounded-md"><Info size={16} /></button>
-                  <button className="p-2 bg-blue-500 text-white rounded-md"><Edit size={16} /></button>
-                  <button className="p-2 bg-blue-500 text-white rounded-md"><Trash2 size={16} /></button>
+                  <button className="p-2 bg-indigo-500 text-white rounded-md"><Edit size={16} /></button>
+                  <button className="p-2 bg-indigo-500 text-white rounded-md"><Trash2 size={16} /></button>
                 </td>
               </tr>
             ))}

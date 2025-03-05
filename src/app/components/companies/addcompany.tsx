@@ -79,7 +79,7 @@ export default function AddCompanyModal({ onClose, onConfirm }: { onClose: () =>
                 <button
                   type="submit"
                   onClick={() => onConfirm()}
-                  className="px-16 py-2  bg-purple-600 text-white rounded-lg"
+                  className="px-16 py-2  bg-indigo-500 text-white rounded-lg"
                 >
                   Confirm
                 </button>

@@ -37,7 +37,7 @@ const ConsultantsPage = () => {
         title="Consultants"
         company="Infotech"
         actionButton={
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md"
+          <button className="bg-indigo-500 text-white px-4 py-2 rounded-md"
           onClick={() => setShowAddconsultant(true)}>
             New consultant
           </button>

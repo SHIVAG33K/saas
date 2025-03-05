@@ -21,20 +21,20 @@ export const Sidebar = () => {
   return (
     <div className={`h-screen bg-white shadow-md flex flex-col p-4 transition-all duration-300 ${isCollapsed ? "w-20" : "w-64"}`}>
       {/* Logo & Toggle Button */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-indigo-500 text-white flex items-center justify-center rounded-full text-sm font-bold">
-            S
-          </div>
-          {!isCollapsed && <span className="text-lg font-semibold text-gray-700">StaffITEasy</span>}
-        </div>
-        <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-1 ml-2 mr-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
-        >
-          {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-        </button>
-      </div>
+      <div className={`flex items-center ${isCollapsed ? 'flex-col items-center' : 'justify-between'} mb-6`}>
+  <div className="flex items-center space-x-2">
+    <div className="w-8 h-8 bg-indigo-500 text-white flex items-center justify-center rounded-full text-sm font-bold">
+      S
+    </div>
+    {!isCollapsed && <span className="text-lg font-semibold text-gray-700">StaffITEasy</span>}
+  </div>
+  <button
+    onClick={() => setIsCollapsed(!isCollapsed)}
+    className="p-1 ml-2 mr-2 rounded-full bg-gray-200 hover:bg-gray-300 transition mt-4" 
+  >
+    {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+  </button>
+</div>
 
       {/* Menu Items */}
       <nav className="flex mt-10 flex-col space-y-4">
