@@ -55,7 +55,7 @@ const OpenPoolTable: React.FC<OpenPoolTableProps> = ({ title = "Open Pool", empl
           </thead>
           <tbody>
             {paginatedEmployees.map((emp, index) => (
-              <tr key={index} className="border-t">
+              <tr key={index} className="">
                 <td className="px-4 py-2 font-medium">{emp.name}</td>
                 <td className="px-4 py-2">{emp.contact}</td>
                 <td className="px-4 py-2">{emp.email}</td>
@@ -83,7 +83,7 @@ const OpenPoolTable: React.FC<OpenPoolTableProps> = ({ title = "Open Pool", empl
         >
           Previous
         </button>
-        <span className="px-3 py-1 bg-purple-500 text-white rounded-md">{page}</span>
+        <span className="px-3 py-1 bg-indigo-500 text-white rounded-md">{page}</span>
         <button
           onClick={() => setPage((prev) => (filteredEmployees.length > prev * employeesPerPage ? prev + 1 : prev))}
           disabled={filteredEmployees.length <= page * employeesPerPage}

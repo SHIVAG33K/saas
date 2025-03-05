@@ -90,7 +90,7 @@ const Teamstable: React.FC<OpenPoolTableProps> = ({ title = "Open Pool", employe
         >
           Previous
         </button>
-        <span className="px-3 py-1 bg-purple-500 text-white rounded-md">{page}</span>
+        <span className="px-3 py-1 bg-indigo-500 text-white rounded-md">{page}</span>
         <button
           onClick={() => setPage((prev) => (filteredEmployees.length > prev * employeesPerPage ? prev + 1 : prev))}
           disabled={filteredEmployees.length <= page * employeesPerPage}

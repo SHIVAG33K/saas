@@ -36,8 +36,8 @@ const EmployeesTable = ({ employees, page, setPage, totalEmployees, employeesPer
                 <td className="px-4 py-3 text-gray-600">{emp.consultants}</td>
                 <td className="px-4 py-3 text-gray-600">{emp.submissions}</td>
                 <td className="px-4 py-3 flex space-x-2">
-                  <button className="p-2 bg-blue-500 text-white rounded-md"><Edit size={16} /></button>
-                  <button className="p-2 bg-blue-500 text-white rounded-md"><Trash2 size={16} /></button>
+                  <button className="p-2 bg-indigo-500 text-white rounded-md"><Edit size={16} /></button>
+                  <button className="p-2 bg-indigo-500 text-white rounded-md"><Trash2 size={16} /></button>
                 </td>
               </tr>
             ))}
@@ -54,7 +54,7 @@ const EmployeesTable = ({ employees, page, setPage, totalEmployees, employeesPer
         >
           Previous
         </button>
-        <span className="px-3 py-1 bg-purple-500 text-white rounded-md">{page}</span>
+        <span className="px-3 py-1 bg-indigo-500 text-white rounded-md">{page}</span>
         <button
           onClick={() => setPage(totalEmployees > page * employeesPerPage ? page + 1 : page)}
           disabled={totalEmployees <= page * employeesPerPage}
