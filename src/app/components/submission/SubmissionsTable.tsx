@@ -47,7 +47,9 @@ const SubmissionsTable: React.FC<SubmissionsTableProps> = ({ submissions, page, 
               <td className="px-4 py-3 text-gray-600">{submission.team}</td>
               <td className="px-4 py-3 text-gray-600">{submission.dateUpdated}</td>
               <td className="px-4 py-3">
-                <span className={`px-3 py-1 rounded-md text-xs ${statusColors[submission.status]}`}>{submission.status}</span>
+                <span className={`px-3 py-1 rounded-md text-xs whitespace-nowrap ${statusColors[submission.status]}`}>
+                  {submission.status}
+                </span>
               </td>
               <td className="px-4 py-3 text-gray-600">{submission.vendorName}</td>
               <td className="px-4 py-3 text-gray-600">{submission.vendorCompany}</td>

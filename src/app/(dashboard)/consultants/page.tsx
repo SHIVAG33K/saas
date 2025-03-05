@@ -1,6 +1,7 @@
 "use client";
 
 import Topbar from "@/app/components/common/topbar";
+import AddConsultantsForm from "@/app/components/consultants/addconsultant";
 import Header from "@/app/components/consultants/header";
 import ConsultantsTable from "@/app/components/consultants/table";
 import { useState } from "react";
@@ -22,6 +23,9 @@ const ConsultantsPage = () => {
   const [page, setPage] = useState<number>(1);
   const perPage = 5;
 
+  const [showAddconsultant, setShowAddconsultant] = useState(false);
+
+
   const filteredConsultants = consultantsData.filter((c) =>
     c.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -33,11 +37,23 @@ const ConsultantsPage = () => {
         title="Consultants"
         company="Infotech"
         actionButton={
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
-            New Consultant
+          <button className="bg-blue-600 text-white px-4 py-2 rounded-md"
+          onClick={() => setShowAddconsultant(true)}>
+            New consultant
           </button>
         }
       />
+
+            {showAddconsultant && (
+              <AddConsultantsForm
+                onClose={() => setShowAddconsultant(false)}
+                // onConfirm={() => {
+                //   setShowAddTeam(false);
+                //   // Handle form submission logic here
+                // }}
+              />
+            )}
+
     <div className="p-6 bg-white shadow-lg rounded-lg">
       <Header search={search} setSearch={setSearch} />
       <ConsultantsTable consultants={paginatedConsultants} page={page} setPage={setPage} total={filteredConsultants.length} perPage={perPage} />

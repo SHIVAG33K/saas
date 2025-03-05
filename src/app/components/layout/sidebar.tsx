@@ -53,10 +53,13 @@ export const Sidebar = () => {
       </nav>
 
       {/* Logout */}
-      <div className="mt-auto flex items-center space-x-3 text-gray-600 hover:text-red-500 cursor-pointer">
-        <LogOut size={20} />
-        {!isCollapsed && <span>Logout</span>}
-      </div>
+      
+      <Link href="/" className="mt-auto">
+        <div className="flex items-center space-x-3 p-2 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-red-500 cursor-pointer">
+          <LogOut size={20} />
+          {!isCollapsed && <span>Logout</span>}
+        </div>
+      </Link>
     </div>
   );
 };

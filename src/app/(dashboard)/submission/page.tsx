@@ -1,5 +1,7 @@
 "use client";
 
+import Topbar from "@/app/components/common/topbar";
+import AddSubmissionModal from "@/app/components/submission/addsubmission";
 import SubmissionsTable from "@/app/components/submission/SubmissionsTable";
 import { useState, useEffect } from "react";
 
@@ -82,10 +84,32 @@ export default function SubmissionsPage() {
     setPage(1); // Reset to first page when search query changes
   }, [searchQuery]);
 
-  return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">Submissions</h1>
+  const [showAddSubmission, setShowAddSubmission] = useState(false);
 
+  return (
+      <div className="p-6 bg-gray-100 min-h-screen">
+              <Topbar 
+            title="Submissions"
+            company="Infotech"
+            actionButton={
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-md"
+              onClick={() => setShowAddSubmission(true)}>
+                New Submission
+              </button>
+            }
+          />
+
+                {showAddSubmission && (
+                  <AddSubmissionModal
+                    onClose={() => setShowAddSubmission(false)}
+                    onConfirm={() => {
+                      setShowAddSubmission(false);
+                      // Handle form submission logic here
+                    }}
+                  />
+                )}
+
+        <div className="p-4 bg-white shadow-lg rounded-lg">
       <input
         type="text"
         placeholder="Search by Employee"
@@ -103,5 +127,7 @@ export default function SubmissionsPage() {
       />
 
     </div>
+    </div>
+
   );
 }
