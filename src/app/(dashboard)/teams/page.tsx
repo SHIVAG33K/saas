@@ -4,12 +4,12 @@ import { useState } from "react";
 import OpenPoolTable from "@/app/components/teams/openpool";
 import Teamstable from "@/app/components/teams/team";
 import Topbar from "@/app/components/common/topbar";
+import AddTeamModal from "@/app/components/teams/AddTeamModal";
 
 const TeamsPage = () => {
-  const [search, setSearch] = useState("");
-  const [selectedCompany, setSelectedCompany] = useState("Infotech");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
+
+  const [showAddTeam, setShowAddTeam] = useState(false);
+
   const companies = ["Infotech", "TechSolutions", "GlobalTech", "InnovateX"];
 
   const employees = [
@@ -42,11 +42,22 @@ const TeamsPage = () => {
         title="Teams"
         company="Infotech"
         actionButton={
-          <button className="bg-indigo-500 text-white px-4 py-2 rounded-md">
+          <button className="bg-indigo-500 text-white px-4 py-2 rounded-md" 
+          onClick={() => setShowAddTeam(true)}>
             New Team
           </button>
         }
       />
+
+      {showAddTeam && (
+        <AddTeamModal
+          onClose={() => setShowAddTeam(false)}
+          onConfirm={() => {
+            setShowAddTeam(false);
+            // Handle form submission logic here
+          }}
+        />
+      )}
 
       {/* Open Pool Table */}
       <OpenPoolTable title="Open Pool" employees={employees} />
