@@ -5,6 +5,7 @@ import { Search, Calendar, Edit, Trash2 } from "lucide-react";
 import Header from "@/app/components/employee/header";
 import EmployeesTable from "@/app/components/employee/employeeTable";
 import Topbar from "@/app/components/common/topbar";
+import AddEmployeeForm from "@/app/components/employee/AddEmployeeForm";
 
 type Employee = {
   name: string;
@@ -28,6 +29,9 @@ const EmployeesPage = () => {
   const [page, setPage] = useState(1);
   const employeesPerPage = 5;
 
+
+  const [showAddemp, setShowAddemp] = useState(false);
+
   const filteredEmployees = employeesData.filter((emp) =>
     emp.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -40,12 +44,22 @@ const EmployeesPage = () => {
         title="Employees"
         company="Infotech"
         actionButton={
-          <button className="bg-indigo-500 text-white px-4 py-2 rounded-md">
+          <button className="bg-indigo-500 text-white px-4 py-2 rounded-md"
+          onClick={() => setShowAddemp(true)}>
             New Employee
           </button>
         }
       />
-      
+
+      {showAddemp && (
+        <AddEmployeeForm 
+          onClose={() => setShowAddemp(false)}
+          // onConfirm={() => {
+          //   setShowAddTeam(false);
+          //   // Handle form submission logic here
+          // }}
+        />
+      )}
       <div className="p-6 bg-white shadow-lg rounded-lg">
         <Header search={search} setSearch={setSearch} />
         <EmployeesTable 
